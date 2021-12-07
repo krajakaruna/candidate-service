@@ -2,7 +2,7 @@ version: 2.1
 jobs: 
   build:
     docker:
-      - image: circleci/node:8.10
+      - image: circleci/node:14.18
     working_directory: ~/repo
 
     steps:
@@ -13,7 +13,7 @@ jobs:
             - v1-dependancies-
       - run:
           name: Install serverless content
-          command: sudo npm install -g serverless
+          command: npm install serverless
       - run: 
           name: Install artifacts
           command: npm install
