@@ -13,7 +13,7 @@ jobs:
             - v1-dependancies-
       - run:
           name: Install serverless content
-          command: sudo npm install serverless
+          command: npm install serverless
       - run: 
           name: Install artifacts
           command: npm install
