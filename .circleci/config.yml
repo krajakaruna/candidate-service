@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs: 
   build:
     docker:
@@ -8,21 +8,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - v1-dependancies-
-          - v1-dependancies-
+          keys:
+            - v1-dependancies-
+            - v1-dependancies-
       - run:
-        name: Install serverless content
-        command: sudo npm install -g serverless
+          name: Install serverless content
+          command: sudo npm install -g serverless
       - run: 
-        name: Install artifacts
-        command: npm install
+          name: Install artifacts
+          command: npm install
         
       - save_cache:
-        paths:
-          - node_modules
-        key: v1-dependancies-
+          paths:
+            - node_modules
+          key: v1-dependancies-
 
       - run:
-        name: Depoly application
-        command: sls deploy --stage pre
+          name: Depoly application
+          command: sls deploy --stage pre
