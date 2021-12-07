@@ -1,0 +1,27 @@
+version: 2
+jobs: 
+  build:
+    docker:
+      - image: circleci/node:8.10
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache:
+        keys:
+          - v1-dependancies-
+          - v1-dependancies-
+      - run:
+        name: Install serverless content
+        command: |
+          sudo npm install -g serverless
+          npm install
+        
+      - save_cache:
+        paths:
+          - node_modules
+        key: v1-dependancies-
+
+      - run:
+        name: Depoly application
+        command: sls deploy --stage pre
