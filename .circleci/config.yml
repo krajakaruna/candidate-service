@@ -4,7 +4,6 @@ orbs:
   serverless: circleci/serverless-framework@1.0
 jobs: 
   build:
-    one:
       executor: serverless/default
       steps:
         - checkout
@@ -14,4 +13,4 @@ jobs:
 workflows:
   one_and_two:
     jobs:
-      - one
+      - build
