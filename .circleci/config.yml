@@ -32,4 +32,4 @@ jobs:
 
       - run:
           name: Depoly application
-          command: sls deploy --stage pre
+          command: serverless deploy --stage pre
