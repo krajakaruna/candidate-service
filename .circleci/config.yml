@@ -20,7 +20,7 @@ jobs:
             source ~/.profile
       - run:
           name: Install serverless content
-          command: npm install serverless
+          command: npm install -g serverless
       - run: 
           name: Install artifacts
           command: npm install
