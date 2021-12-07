@@ -12,6 +12,13 @@ jobs:
             - v1-dependancies-
             - v1-dependancies-
       - run:
+          name: change npm location
+          command: |
+            mkdir ~/.npm-global
+            npm config set prefix '~/.npm-global'
+            export PATH=~/.npm-global/bin:$PATH
+            source ~/.profile
+      - run:
           name: Install serverless content
           command: npm install serverless
       - run: 
