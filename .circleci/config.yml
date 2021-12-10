@@ -10,6 +10,8 @@ jobs:
         - aws-cli/setup
         - serverless/setup
         - run: sls deploy
+        - run: sls remove
+        
 workflows:
   one_and_two:
     jobs:
